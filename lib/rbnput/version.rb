@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 
 module Rbnput
-  VERSION = "1.2.0"
+  # Current version of the gem
+  VERSION = "1.3.0"
+  
+  # Gem Author
   AUTHOR = "Krist Ponpairin"
 end

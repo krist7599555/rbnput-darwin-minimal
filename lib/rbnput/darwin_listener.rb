@@ -9,6 +9,12 @@ module Rbnput
   # Base listener for keyboard events
   # คลาส Listener พื้นฐานสำหรับเหตุการณ์คีย์บอร์ด บน macOS
   class DarwinListener < Rbnput::SimpleMutexThread
+    # Initializes the DarwinListener.
+    # สร้าง instance ใหม่สำหรับดักจับคีย์บอร์ด
+    #
+    # @param on_press [Proc, nil] Callback when a key is pressed.
+    # @param on_release [Proc, nil] Callback when a key is released.
+    # @param kwargs [Hash] Additional options passed to SimpleMutexThread.
     def initialize(on_press: nil, on_release: nil, **kwargs)
       super(*kwargs)
       @on_press = on_press     # callback เมื่อกดปุ่ม
@@ -20,16 +26,28 @@ module Rbnput
     end
     attr_reader :on_press, :on_release
 
+    # Sets the callback for key press events.
     # ตั้งค่า callback สำหรับการกดปุ่ม
+    #
+    # @yield [key]
+    # @yieldparam key [KeyCode] The key that was pressed.
     def on_press(&proc)
       @on_press = proc
     end
     
+    # Sets the callback for key release events.
     # ตั้งค่า callback สำหรับการปล่อยปุ่ม
+    #
+    # @yield [key]
+    # @yieldparam key [KeyCode] The key that was released.
     def on_release(&proc)
-      @on_press = proc
+      @on_release = proc
     end
 
+    # The main run loop for the listener.
+    # Internal method called by the thread.
+    #
+    # @api private
     def _run
       # ตรวจสอบว่า Process ได้รับสิทธิ์ Accessibility หรือไม่
       unless Rbnput::DarwinFFI.AXIsProcessTrusted()
@@ -98,6 +116,10 @@ module Rbnput
       @loop = nil
     end
 
+    # Stops the listener and the run loop.
+    # หยุดการทำงานของ listener
+    #
+    # @return [void]
     def stop
       super
       # หยุด run loop

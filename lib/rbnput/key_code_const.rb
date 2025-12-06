@@ -1,3 +1,7 @@
+# frozen_string_literal: true
+
+# Mapping from key names to macOS unique virtual key codes (Hex).
+# Based on the system header files.
 KEY_CODE_NAME_TO_HEX = {
   :kVK_ANSI_A => 0x00,
   :kVK_ANSI_S => 0x01,
@@ -125,4 +129,5 @@ KEY_CODE_NAME_TO_HEX = {
   # NX_KEYTYPE_REWIND = 20
 }
 
+# Reverse mapping from virtual key codes to key names.
 KEY_CODE_HEX_TO_NAME = KEY_CODE_NAME_TO_HEX.invert

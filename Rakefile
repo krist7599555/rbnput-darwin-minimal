@@ -12,6 +12,12 @@ task :test_prod do
   sh({ "APP_MODE" => "prod" }, "ruby #{EXAMPLE}")
 end
 
+desc "Run example in prod mode --rebuild --no-cache"
+task :test_prod_latest do
+  sh("rake build")
+  sh("rake test_prod")
+end
+
 desc "Build Gem"
 task :build do
   sh("rm rbnput-darwin-minimal-*.gem || true")
