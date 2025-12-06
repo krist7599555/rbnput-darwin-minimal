@@ -2,5 +2,5 @@
 
 module Rbnput
   VERSION = "0.1.0"
-  AUTHOR = "Your Name"
+  AUTHOR = "Krist Ponpairin"
 end
