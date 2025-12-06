@@ -21,7 +21,7 @@ Gem::Specification.new do |spec|
   
 
   # 📦 Files
-  spec.files         = Dir["{lib,examples}/**/*.rb"] + ['*.gemspec', "README.md", "LICENSE"]
+  spec.files         = Dir["{lib,examples}/**/*.rb"] + ['rbnput-darwin-minimal.gemspec', "README.md", "LICENSE"]
   spec.require_paths = ["lib"]
 
   # 💎 Dependencies
