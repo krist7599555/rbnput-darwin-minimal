@@ -22,6 +22,5 @@ require_relative "rbnput/darwin_listener"
 # This module imports keyboard and mouse submodules for controlling
 # and monitoring input devices.
 module Rbnput
-  class Error < StandardError; end
   Listener = ::Rbnput::DarwinListener
 end

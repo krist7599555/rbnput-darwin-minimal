@@ -1,10 +1,17 @@
 #!/usr/bin/env ruby
 # frozen_string_literal: true
 
-require_relative '../lib/rbnput'
+MODE = ENV.fetch("APP_MODE", "local").to_sym
+
+# Load Library
+case MODE
+when :local; require_relative '../lib/rbnput-darwin-minimal'
+when :prod;  require 'rbnput-darwin-minimal'
+else; raise "Unknown MODE #{MODE.inspect}"
+end
 
 # Example: Monitoring keyboard events
-puts "=== Keyboard Listener Example ==="
+puts "=== Keyboard Listener Example (#{MODE}) ==="
 puts "Press any keys. Press Ctrl+C to exit."
 puts
 
