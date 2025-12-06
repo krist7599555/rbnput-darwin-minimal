@@ -11,3 +11,15 @@ desc "Run example in prod mode"
 task :test_prod do
   sh({ "APP_MODE" => "prod" }, "ruby #{EXAMPLE}")
 end
+
+desc "Build Gem"
+task :build do
+  sh("rm rbnput-darwin-minimal-*.gem || true")
+  sh("gem build ./rbnput-darwin-minimal.gemspec")
+end
+
+desc "Gem push"
+task :push do
+  sh("rake build")
+  sh("gem push rbnput-darwin-minimal-*.gem")
+end

@@ -64,4 +64,4 @@ rake test_local
 - [./lib/rbnput/key_code_const.rb | All Key Map](./lib/rbnput/key_code_const.rb)
 - [./lib/rbnput/key_code.rb | Class KeyCode(vk, is_media)](./lib/rbnput/key_code.rb)
 - [./lib/rbnput/darwin_ffi.rb | SystemLibrary Bind FFI 🪪](./lib/rbnput/darwin_ffi.rb)
-- [./lib/rbnput/simple_mutex_thread.rb | Boring Thread Implement 🧵](./lib/rbnput/simple_mutex_thread.rb)
+- [./lib/rbnput/simple_mutex_thread.rb | Boring Thread Implement ](./lib/rbnput/simple_mutex_thread.rb)
