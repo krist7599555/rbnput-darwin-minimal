@@ -18,9 +18,10 @@ Gem::Specification.new do |spec|
     "documentation_uri" => "https://github.com/krist7599555/rbnput-darwin-minimal",
     "changelog_uri"     => "https://github.com/krist7599555/rbnput-darwin-minimal/releases"
   }
+  
 
   # 📦 Files
-  spec.files         = Dir["lib/**/*.rb"] + ["README.md", "LICENSE"]
+  spec.files         = Dir["{lib,examples}/**/*.rb"] + ['*.gemspec', "README.md", "LICENSE"]
   spec.require_paths = ["lib"]
 
   # 💎 Dependencies
@@ -29,5 +30,6 @@ Gem::Specification.new do |spec|
   # Ruby version
   spec.required_ruby_version = ">= 3.0"
 
-   spec.extra_rdoc_files = ['README.md']
+  spec.rdoc_options     = ['--main', 'README.md']
+  spec.extra_rdoc_files = ['LICENSE']
 end

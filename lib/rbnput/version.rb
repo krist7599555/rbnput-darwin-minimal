@@ -2,7 +2,7 @@
 
 module Rbnput
   # Current version of the gem
-  VERSION = "1.4.0"
+  VERSION = "1.4.1"
   
   # Gem Author
   AUTHOR = "Krist Ponpairin"
