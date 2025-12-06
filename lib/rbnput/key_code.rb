@@ -3,11 +3,15 @@ require_relative "./key_code_const"
 class Rbnput::KeyCode
   attr_reader :vk, :is_media
 
+  # สร้าง Object KeyCode
+  # @param vk [Integer] Virtual Key Code
+  # @param is_media [Boolean] เป็น Media Key หรือไม่
   def initialize(vk: nil, is_media: false)
     @vk = vk
     @is_media = is_media
   end
 
+  # แปลงเป็น String สำหรับแสดงผล
   def to_s
     [
       @vk.nil? ? "" : "vk=#{@vk}",
@@ -18,10 +22,12 @@ class Rbnput::KeyCode
     .then { "KeyCode(#{_1}, #{key})" }
   end
 
+  # ชื่อของปุ่ม (จากค่า vk)
   def key
     KEY_CODE_HEX_TO_NAME[@vk] || "UNKNOW"
   end
 
+  # เปรียบเทียบ object
   def ==(other)
     return false unless other.is_a?(KeyCode)
     @vk == other.vk && @is_media == other.is_media
@@ -33,10 +39,12 @@ class Rbnput::KeyCode
     [@vk, @is_media].hash
   end
 
+  # สร้าง KeyCode จาก Virtual Key
   def self.from_vk(vk, **kwargs)
     new(vk: vk, is_media: false, **kwargs)
   end
 
+  # สร้าง KeyCode จาก Media Key
   def self.from_media(vk, **kwargs)
     new(vk: vk, is_media: true, **kwargs)
   end

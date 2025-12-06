@@ -18,9 +18,12 @@ require_relative "rbnput/darwin_listener"
 # require_relative "rbnput/mouse"
 
 # The main Rbnput module
+# โมดูลหลักสำหรับ Rbnput
 #
 # This module imports keyboard and mouse submodules for controlling
 # and monitoring input devices.
+# โมดูลนี้จะนำเข้าโมดูลย่อยของคีย์บอร์ดและเมาส์เพื่อควบคุมและตรวจสอบอุปกรณ์อินพุต
 module Rbnput
+  # กำหนด Listener เป็น DarwinListener สำหรับระบบ macOS
   Listener = ::Rbnput::DarwinListener
 end
