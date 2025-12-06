@@ -1,5 +1,8 @@
 # 🎹 rbnput-darwin-minimal 🍎
 
+[![Gem Version](https://badge.fury.io/rb/rbnput-darwin-minimal.svg)](https://badge.fury.io/rb/rbnput-darwin-minimal)
+[![GitHub](https://img.shields.io/badge/github-repo-blue)](https://github.com/krist7599555/rbnput-darwin-minimal)
+
 ไลบรารี Ruby ขนาดเล็กสำหรับตรวจจับการกดแป้นพิมพ์บนระบบ macOS โดยใช้ FFI เชื่อมต่อกับ system library ของ Darwin โดยตรง
 
 ## ✨ คุณสมบัติ

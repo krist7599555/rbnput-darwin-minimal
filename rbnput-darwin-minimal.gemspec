@@ -28,4 +28,6 @@ Gem::Specification.new do |spec|
 
   # Ruby version
   spec.required_ruby_version = ">= 3.0"
+
+   spec.extra_rdoc_files = ['README.md']
 end
